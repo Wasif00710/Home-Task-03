@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Passport Application Form">
+    <meta name="keywords" content="Passport, Application, Form, Inputs, Tutorial">
+    <title>Passport Application Form</title>
+</head>
+<body>
+
+    <!-- Header Section with light blue background using bgcolor attribute -->
+    <table width="100%" bgcolor="#ADD8E6" cellpadding="20">
+        <tr>
+            <td>
+                <center>
+                    <h1>Passport Application Portal</h1>
+                    <h2>Submit your details for a passport</h2>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Form Container with light gray background applied using inline style -->
+    <div style="background-color: #f0f0f0; padding: 20px; max-width: 600px; margin: 0 auto; border-radius: 8px;">
+        <form action="/submit_passport_application" method="POST" enctype="multipart/form-data" autocomplete="on">
+            <!-- Full Name input field, 'required' ensures the field is mandatory -->
+            <label for="fullname">Full Name (as per your ID):</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required maxlength="50" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'maxlength' ensures the name does not exceed 50 characters -->
+
+            <!-- Password input field for setting up an account -->
+            <label for="password">Set Password for Your Account:</label>
+            <input type="password" id="password" name="password" placeholder="Enter a strong password" required minlength="8" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'minlength' ensures a minimum of 8 characters for password security -->
+
+            <!-- Email input field, 'type="email"' validates the email format -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'required' ensures this field is mandatory -->
+
+            <!-- Phone number input with pattern restriction to match Bangladesh format -->
+            <label for="phone">Phone Number (Format: 01XXX-XXXXXX):</label>
+            <input type="tel" id="phone" name="phone" pattern="01[3-9]{1}[0-9]{8}" placeholder="01XXX-XXXXXX" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'pattern' attribute ensures the phone number matches the Bangladesh format -->
+
+            <!-- Date of Birth input field -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'type="date"' provides a date picker for the user -->
+
+            <!-- Radio buttons to select gender -->
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male" required> Male
+            <input type="radio" id="female" name="gender" value="female"> Female
+            <input type="radio" id="other" name="gender" value="other"> Other
+            <!-- Comment: Radio buttons allow the user to select one gender option -->
+            <br><br>
+
+            <!-- Address field -->
+            <label for="address">Residential Address:</label>
+            <textarea id="address" name="address" rows="3" placeholder="Enter your full residential address" required style="width: 100%; padding: 10px; margin-bottom: 15px;"></textarea>
+            <!-- Comment: 'textarea' allows the user to input multiple lines for the address -->
+
+            <!-- Nationality dropdown list updated to include Bangladesh -->
+            <label for="nationality">Nationality:</label>
+            <select id="nationality" name="nationality" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+                <option value="bangladesh">Bangladesh</option>
+                <option value="usa">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+            </select>
+            <!-- Comment: Dropdown list ensures the user selects a predefined nationality -->
+
+            <!-- File upload input for uploading a passport-sized photo -->
+            <label for="photo">Upload Passport-sized Photo:</label>
+            <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'accept' attribute restricts the file types to .jpg, .jpeg, or .png formats -->
+
+            <!-- Number input field for specifying the number of years the passport is needed -->
+            <label for="years">Number of years for Passport Validity (5-10 years):</label>
+            <input type="number" id="years" name="years" min="5" max="10" value="10" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            <!-- Comment: 'min' and 'max' limit the number of years for validity, default is 10 years -->
+
+            <!-- Submit button to send the form -->
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit Passport Application</button>
+            <!-- Comment: Submits the form data to the action URL specified in the form tag -->
+
+            <!-- Reset button to clear the form -->
+            <button type="reset" style="width: 100%; padding: 10px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px;">Reset Form</button>
+            <!-- Comment: Resets all form fields to their default values -->
+        </form>
+    </div>
+
+</body>
+</html>
